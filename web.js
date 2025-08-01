@@ -42,7 +42,7 @@ const myModule = (function() {
 
     async function fetchData() {
         const url = "https://jsonplaceholder.typicode.com/posts";
-        await fetch(url).then(response => { return response.json()})
+        const x = await fetch(url).then(response => { return response.json()})
         .then(data => {
             const ul = document.getElementById("main__ul");
             for (let i = 0; i < 3; i++) {
@@ -53,6 +53,7 @@ const myModule = (function() {
             }
         })
         .catch(error => {return console.log(error)});
+        return Promise.resolve(x);
     }
 
     return {
