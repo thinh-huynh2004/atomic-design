@@ -7,7 +7,7 @@
     </head>
     <body class="font-arial box-border m-0 leading-normal">
         <header class="h-full bg-header">
-            <nav class="flex px-7rem py-20 content-between">
+            <nav class="flex px-7rem py-20 content-between navbar">
                 <a href="#" class="header-a flex justify-items-center text-20 text-header-a no-underline">
                     <strong>Startright</strong></a>
                 <ul class="header-ul flex list-none m-0 p-0 pl-2rem">
@@ -30,6 +30,32 @@
                     <li class="header-li inline-block"><a href="#" class="header-li-a no-underline text-li-a text-14 py-10 px-15 inline-block">Why us</a></li>
                     <li class="header-li inline-block"><a href="#" class="header-li-a no-underline text-li-a text-14 py-10 px-15 inline-block">Contract us</a></li>
                 </ul>
+                <div class="btn-navbar-container">
+                    <button class="btn-navbar" id="btn-navbar">
+                        ☰
+                    </button>
+                    <ul class="navbar-mini" id="navbar-mini">
+                        <li class="navbar-mini-li">
+                            <a href="#" class="navbar-mini-a" id="change-theme-mini">&#127769;</a>
+                        </li>
+                        <li class="navbar-mini-li">
+                            <a href="#" class="navbar-mini-a">Home</a>
+                        </li>
+                        <li class="navbar-mini-li">
+                            <a href="#" class="navbar-mini-a">Solutions</a>
+                        </li>
+                        <li class="navbar-mini-li">
+                            <a href="#" class="navbar-mini-a">Plans and Pricing</a>
+                        </li>
+                        <li class="navbar-mini-li">
+                            <a href="#" class="navbar-mini-a">Why us</a>
+                        </li>
+                        <li class="navbar-mini-li">
+                            <a href="#" class="navbar-mini-a">Contract us</a>
+                        </li>
+                    </ul>
+                </div>
+                
             </nav>
             <div class="block px-7rem py-20 content-between">
                 <div class="container">
@@ -52,30 +78,32 @@
             </div>
         </header>
         <main class="h-500">
-            <ul class="list-none max-w-450 m-0 py-10" id="main__ul">
-                
+            <ul class="list-none max-w-450 m-0 py-10 px-20" id="main__ul">
+                <li class="text-16 py-10" id="main-li-0">Loading...</li>
+                <li class="text-16 py-10" id="main-li-1">Loading...</li>
+                <li class="text-16 py-10" id="main-li-2">Loading...</li>
             </ul>
         </main>
-        <footer class="text-14 bg-footer pt-100 pb-70">
+        <footer class="text-14 bg-footer pt-100 pb-70 footer">
             <div class="container max-w-1320 mx-auto">
-                <div class="flex nowrap">
+                <div class="flex nowrap container-nowrap">
                     <div class="col-lg-2 flex-auto w-1-6 px-0-75-rem box-border">
                         <div class="widget mb-40 block relative">
                             <h3 class="widget-h3 text-16 font-medium leading-1-2 mb-30">Help</h3>
                             <ul class="widget-ul w-150 pl-0 list-none mt-0 mb-1rem">
-                                <li class="mb-10">
+                                <li class="mb-10 widget-li">
                                     <a href="#" 
                                     class="text-footer-a no-underline inline-block relative">Contact us</a></li>
-                                <li class="mb-10">
+                                <li class="mb-10 widget-li">
                                     <a href="#" 
                                     class="text-footer-a no-underline inline-block relative">Bootstrap 5</a></li>
-                                <li class="mb-10">
+                                <li class="mb-10 widget-li">
                                     <a href="#" 
                                     class="text-footer-a no-underline inline-block relative">Web design</a></li>
-                                <li class="mb-10">
+                                <li class="mb-10 widget-li">
                                     <a href="#" 
                                     class="text-footer-a no-underline inline-block relative">Pricing</a></li>
-                                <li class="mb-10">
+                                <li class="mb-10 widget-li">
                                     <a href="#" 
                                     class="text-footer-a no-underline inline-block relative">FAQ</a></li>
                             </ul>

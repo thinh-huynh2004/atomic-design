@@ -25,44 +25,70 @@ const myModule = (function() {
         themeBtn.addEventListener("click", () => changeTheme());
     }
 
-    // function fetchData() {
-    //     const url = "https://jsonplaceholder.typicode.com/posts";
-    //     fetch(url).then(response => response.json())
-    //     .then(data => {
-    //         const ul = document.getElementById("main__ul");
-    //         for (let i = 0; i < 3; i++) {
-    //             const li = document.createElement("li");
-    //             li.classList.add("text-16", "py-10");
-    //             li.innerHTML = `${data[i].title} <br> ${data[i].body}`;
-    //             ul.appendChild(li);
-    //         }
-    //     })
-    //     .catch(error => console.log(error));
-    // }
-
-    async function fetchData() {
+    function fetchData() {
         const url = "https://jsonplaceholder.typicode.com/posts";
-        const x = await fetch(url).then(response => { return response.json()})
+        for (let i = 0; i < 3; i++) {
+            const id = "main-li-" + i;
+            const li = document.getElementById(id);
+            li.innerHTML = `Loading...`;
+        }
+        fetch(url).then(response => { return response.json()})
         .then(data => {
-            const ul = document.getElementById("main__ul");
             for (let i = 0; i < 3; i++) {
-                const li = document.createElement("li");
-                li.classList.add("text-16", "py-10");
+                const id = "main-li-" + i;
+                const li = document.getElementById(id);
                 li.innerHTML = `${data[i].title} <br> ${data[i].body}`;
-                ul.appendChild(li);
             }
         })
         .catch(error => {return console.log(error)});
-        return Promise.resolve(x);
+    }
+
+    function onClickNavbarBtn() {
+        document.getElementById("btn-navbar").addEventListener("click", () => {
+            const div = document.getElementById("navbar-mini");
+            div.classList.toggle("btn");
+            let check = div.classList.contains("btn");
+            if (check) {
+                const btn = document.getElementById("btn-navbar");
+                btn.style.color = `#f2ad5f`;
+                div.style.display = `block`;
+            }
+            else {
+                const btn = document.getElementById("btn-navbar");
+                btn.style.color = `#fff`;
+                div.style.display = `none`;
+            }
+        })
+    }
+
+    function changeThemeMini() {
+        const themeBtn = document.getElementById("change-theme-mini");
+        const isDark = document.body.classList.contains('dark');
+        if (isDark) {
+            document.body.classList.toggle('dark');
+            themeBtn.innerHTML = '&#127769;';
+        }
+        else {
+            document.body.classList.toggle("dark");
+            themeBtn.innerHTML = '&#9728;';
+        }
+    }
+
+    function onClickThemeBtnMini() {
+        document.getElementById("change-theme-mini").addEventListener("click", () => {
+            return changeThemeMini();
+        })
     }
 
     return {
         clickOnSolution,
         onClickThemeBtn,
-        fetchData
+        fetchData,
+        onClickNavbarBtn: onClickNavbarBtn(),
+        onClickThemeBtnMini: onClickThemeBtnMini(),
     }
 })();
 
 myModule.clickOnSolution();
 myModule.onClickThemeBtn();
-myModule.fetchData();
+setInterval(myModule.fetchData, 5000);
